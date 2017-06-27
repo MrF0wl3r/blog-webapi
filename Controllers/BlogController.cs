@@ -4,36 +4,44 @@ using System.Linq;
 using System.Threading.Tasks;
 using blog_webapi.Entities;
 using Microsoft.AspNetCore.Mvc;
+using blog_webapi.DAL;
 
 namespace blog_webapi.Controllers
 {
     [Route("api/[controller]")]
     public class BlogController : Controller
     {
+        public BlogController(BlogContext blogContext)
+        {
+            _dbContext = blogContext;
+        }
+
+        private readonly BlogContext _dbContext;
+
         // GET api/blog
         [HttpGet]
-        public IEnumerable<Blog> Get()
+        public IEnumerable<Post> Get()
         {
-            var blog = new Blog() { Id = 1, Title = "First Post", Contents = "lkasjdflkjal;jf aklsjdflkjas  laksjdflkjs"};
-            return new [] { blog };
+            var data = _dbContext.Posts.ToList();
+            return data;
         }
 
         // GET api/blog/5
         [HttpGet("{id}")]
-        public Blog Get(int id)
+        public Post Get(int id)
         {
             return null;
         }
 
         // POST api/blog
         [HttpPost]
-        public void Post([FromBody]Blog value)
+        public void Post([FromBody]Post value)
         {
         }
 
         // PUT api/blog/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]Blog value)
+        public void Put(int id, [FromBody]Post value)
         {
         }
 

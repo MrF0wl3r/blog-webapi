@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace blog_webapi.Entities
 {
-    public class Blog
+    public class Post
     {
         public int Id { get; set; }
         public string Title { get; set; }
