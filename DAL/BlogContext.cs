@@ -7,9 +7,15 @@ namespace blog_webapi.DAL
   {
     public DbSet<Post> Posts { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public BlogContext(DbContextOptions<BlogContext> options)
+      : base(options)
     {
-      optionsBuilder.UseInMemoryDatabase();
+    }
+
+    public void Seed()
+    {
+      Posts.Add(new Post() { Id=1, Title="First Post", Contents="", Comments=null});
+      SaveChanges();
     }
   }
 }
