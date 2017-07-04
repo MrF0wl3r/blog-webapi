@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using blog_webapi.Entities;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using blog_webapi.DAL;
 
@@ -22,7 +23,7 @@ namespace blog_webapi.Controllers
         [HttpGet]
         public IEnumerable<Post> Get()
         {
-            var data = _dbContext.Posts.ToList();
+            var data = _dbContext.Posts.Include(post => post.Comments).ToList();
             return data;
         }
 
