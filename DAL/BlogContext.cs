@@ -18,9 +18,7 @@ namespace blog_webapi.DAL
       var post = new Post();
       post.Id = 1;
       post.Title = "First Post";
-      post.Contents = "Bacon ipsum dolor amet pork turkey boudin, burgdoggen drumstick kevin porchetta sirloin meatball rump pork loin leberkas venison cow pancetta.\n\n" +
-                      "  \n\n" + 
-                      "Biltong landjaeger alcatra cupim, turkey brisket ball tip chuck short loin frankfurter. Short loin corned beef meatloaf, ribeye sirloin tenderloin ground round flank chuck shoulder beef fatback jerky. Pork chop venison strip steak, porchetta meatball pancetta bacon landjaeger. Ribeye pork chop frankfurter biltong. Beef short loin picanha, sausage strip steak biltong flank rump doner prosciutto brisket ribeye venison pork. Strip steak turkey pastrami beef pork. Bacon ground round shank landjaeger salami corned beef swine shankle beef ribs porchetta. Shoulder flank beef ribs doner jerky filet mignon sirloin rump fatback sausage boudin. Chuck prosciutto corned beef jowl, t-bone ham turducken drumstick pork belly salami cow. Frankfurter picanha tail shankle beef flank.";
+      post.Contents = "Bacon ipsum dolor amet landjaeger venison beef, chicken filet mignon fatback porchetta frankfurter boudin. Sirloin shoulder rump venison ribeye meatloaf pork. Ground round ribeye chuck jowl doner, cupim boudin jerky tail. Picanha ham biltong shankle pastrami tenderloin jowl landjaeger venison tongue andouille porchetta strip steak chicken ground round. Pork belly boudin porchetta, turkey pork chop kielbasa fatback landjaeger ball tip jerky turducken. Meatball ham hock pork belly drumstick. Pork loin meatloaf rump, frankfurter chuck short ribs swine t-bone brisket.";
       post.Comments = new List<Comment>();
       post.Comments.Add(new Comment() { Id=1, Name="Bob", Message="Nice post!"});
       post.Comments.Add(new Comment() { Id=2, Name="Dylan", Message="Very meaty"});                

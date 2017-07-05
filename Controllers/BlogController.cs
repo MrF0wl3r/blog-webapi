@@ -5,11 +5,13 @@ using System.Threading.Tasks;
 using blog_webapi.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Cors;
 using blog_webapi.DAL;
 
 namespace blog_webapi.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("MyPolicy")]
     public class BlogController : Controller
     {
         public BlogController(BlogContext blogContext)
@@ -21,6 +23,7 @@ namespace blog_webapi.Controllers
 
         // GET api/blog
         [HttpGet]
+        [EnableCors("MyPolicy")]
         public IEnumerable<Post> Get()
         {
             var data = _dbContext.Posts.Include(post => post.Comments).ToList();
